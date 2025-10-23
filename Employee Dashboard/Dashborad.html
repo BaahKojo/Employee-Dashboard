@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Employee Management System</h1>
+            <p class="subtitle">Add, view and manage employee information</p>
+        </header>
+
+        <div class="success-message" id="successMessage">
+            Employee added successfully!
+        </div>
+
+        <div class="main-content">
+            <section class="form-section">
+                <div class="form-header">
+                    <h2>Add Employee</h2>
+                    <button class="clear-btn" id="clearForm">Clear Form</button>
+                </div>
+                <form id="employeeForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter full name">
+                        <div class="error" id="nameError">Please enter a valid name (min 2 characters)</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter email address">
+                        <div class="error" id="emailError">Please enter a valid email address</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="position">Position</label>
+                        <select id="position">
+                            <option value="">Select a position</option>
+                            <option value="Software Engineer">Software Engineer</option>
+                            <option value="Product Manager">Product Manager</option>
+                            <option value="UX Designer">UX Designer</option>
+                            <option value="Data Analyst">Data Analyst</option>
+                            <option value="HR Manager">HR Manager</option>
+                            <option value="Marketing Specialist">Marketing Specialist</option>
+                        </select>
+                        <div class="error" id="positionError">Please select a position</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <select id="department">
+                            <option value="">Select a department</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Product">Product</option>
+                            <option value="Design">Design</option>
+                            <option value="Data Science">Data Science</option>
+                            <option value="Human Resources">Human Resources</option>
+                            <option value="Marketing">Marketing</option>
+                        </select>
+                        <div class="error" id="departmentError">Please select a department</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="salary">Salary (GH¢)</label>
+                        <input type="number" id="salary" placeholder="Enter salary" min="0">
+                        <div class="error" id="salaryError">Please enter a valid salary (min GH¢1000)</div>
+                    </div>
+
+                    <button type="submit" class="btn">Add Employee</button>
+                </form>
+            </section>
+
+            <section class="table-section">
+                <h2>Employee List</h2>
+                <table id="employeeTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Position</th>
+                            <th>Department</th>
+                            <th>Salary</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeTableBody">
+                        <!-- Employee data will be inserted here dynamically -->
+                    </tbody>
+                </table>
+                <div class="empty-table" id="emptyTableMessage">
+                    No employees added yet. Use the form to add employees.
+                </div>
+            </section>
+        </div>
+    </div>
+    <a href="index.html"><button type="submit" class="btn-1">Sign Out</button></a>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
